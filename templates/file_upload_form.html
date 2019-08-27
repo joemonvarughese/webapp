@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<head>
+	<title>FP Detector</title>
+	<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--<link rel="stylesheet" type="text/css" href="cybersec.css">-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<style>
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+.main{
+ 
+}
+.background {
+  /* The image used */
+  background-image: url("https://wallpapercave.com/wp/wp2691481.jpg");
+  height:650px;
+  /* Set a specific height 
+  min-height: 800px; */
+
+  /* Create the parallax scrolling effect*/
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.filebrowse{
+  width: 50%;
+  height:40%;
+  padding:10px;
+  background-color:black;
+  opacity:0.8997;
+  left:25%;
+  position:absolute;
+  top:34%;
+  display: inline-block;
+  border-radius: 15px;
+  color:white;
+}
+.searchtext{
+  color:white;
+  padding-top: 2%;
+  padding-left:2%;
+
+}
+.imagefile{
+  width:150px;
+  height:150px;
+}
+.container-fluid{
+  margin: 0px !important;
+  padding: 0px !important;
+    display:block;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-color: black;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.text-block {
+  position: absolute;
+  
+  width:100%;
+  background-color: black;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  
+}
+.menu-button{
+ text-decoration: none;
+ color:black;
+ background-color:#e1e3e9; 
+ height:300px;
+  border-radius:20px
+}
+.menu-button a{
+  text-decoration: none;
+  color:black;
+  display:block;
+}
+.menu-button:hover{
+border-color:#0066cc;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(90, 16, 16, 0.6);
+  outline: 0 none;
+ height:300px;
+  border-radius:20px;
+  text-decoration: none;
+  color:black;
+}
+footer{
+    color:white;
+    background-color: black;
+    padding:20px;
+    position: static;
+    bottom: 0;
+    width: 100%;
+}
+.footer-classic a, .footer-classic a:focus, .footer-classic a.active {
+    color: #ffffff;
+}
+footer a:hover
+{
+    text-decoration: none;
+    color:white;
+    transition: 0.5s;
+}
+.social-container .col {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+textarea[type="text"]:focus,
+.uneditable-input:focus {   
+  border-color:#0066cc;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(90, 16, 16, 0.6);
+  outline: 0 none;
+}
+</style>
+
+<body>
+<div class="container-fluid main">
+        <div class="text-block"> 
+                <h1 class="display-1">FP Detector</h1>
+        </div>  
+    <div class="background">
+        
+        <div class="filebrowse">
+            <div class="searchtext">
+                <h3 class="">
+                    Search for the file:
+                </h3>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <img src="http://www.pngall.com/wp-content/uploads/2018/05/Files-High-Quality-PNG.png" class="imagefile"/>
+                        </div>
+                        
+                        <div class="col-md-8">
+						<br><br>
+						<form action = "/success" method = "post" enctype="multipart/form-data">  
+							<div class="row">
+							<input class="col-md-8" type="file" name="file" /> 
+							
+							
+							<input class="col-md-3" type = "submit" value="Upload"> 
+</div>							
+							</form>
+						
+						
+                         <!--   <form method="POST" action="">
+                                <br>
+                                <br>
+                                <div class="row">
+                                        <div class="col-sm-8">
+                                            <input type="file" name="file">
+                                         </div>
+                                         <div class="col-sm-4">
+                                            <input type="submit" class="btn btn-info btnclr" value="Detect" id="button"> 
+                                         </div>
+                                </div>
+                            </form>-->
+                        </div>
+                    </div>
+                
+            </div>
+        </div>
+       
+    </div>
+  
+</div>
+    <footer class="section footer-classic context-dark bg-image">
+        <div class="container">
+          <div class="row row-30">
+            <div class="col-md-4 col-xl-5">
+              <div class="pr-xl-4"><a class="brand" href="index.html"><img class="brand-logo-light" src="images/agency/logo-inverse-140x37.png" alt="" width="140" height="37" srcset="images/agency/logo-retina-inverse-280x74.png 2x"></a>
+                <p>FP Detector</p>
+                <!-- Rights-->
+                
+              </div>
+            </div>
+            <div class="col-md-4">
+              <h5></h5>
+              <dl class="contact-list">
+                <dt></dt>
+                <dd><a href="mailto:#"></a></dd>
+                  <dd><a href="mailto:#"></a></dd>
+                </dl>
+              
+            </div>
+            
+          </div>
+        </div>
+       
+      </footer>
+
+
+</body>
+</html>

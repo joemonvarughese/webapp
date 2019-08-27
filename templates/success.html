@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FP Detector | Result</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://shabeer-ali-m.github.io/jPut/js/jput.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+</head>
+<script>
+	
+    var data= decodeURI({{ output }});
+	lenr = data.length;
+	for (r=0;r<lenr; r++)
+	{
+		if(data[r] == '\"')
+			data = ''.concat(data.substring(0,r-1), " \" " , data.substring(r+1));
+		else if(data[r] == '<')
+			data = ''.concat(data.substring(0,r-1), "&lt;" , data.substring(r+1));
+		else if(data[r] == '>')
+			data = ''.concat(data.substring(0,r-1), "&gt;" , data.substring(r+1));
+	}
+	data = data.split(',')
+	//data = data.text();
+	var len = data.length;
+window.onload = function fp()
+{
+	i=0;
+    while(i<len)
+    {
+            var div1 =  document.createElement("div");
+            var div2 = document.createElement("div");
+            <!--div2.innerHTML='<b>Name: </b>'.concat(data[i][0],"<br><b>URL: </b>", escape(data[i][1]),"<br>","<b>Response: </b>",data[i][2],"<br><br>");-->
+            div2.innerHTML='<b>Name: </b>'.concat(data[i+0],"<br><b>URL: </b>", data[i+1],"<br>","<b>Response: </b>",data[i+2],"<br><br>");
+			
+
+			div1.appendChild(div2);
+            var element = document.getElementById("vulnname")
+            element.appendChild(div1);    
+			i=i+3;
+     }
+}
+</script>
+<style>
+        *{
+            margin:0px;
+            padding:0px;
+            box-sizing:border-box;
+        }
+        html {
+          scroll-behavior: smooth;
+        }
+        .background {
+          /* The image used */
+          background-image: url("https://wallpapercave.com/wp/wp2691481.jpg");
+          height:650px;
+          /* Set a specific height 
+          min-height: 800px; */
+        
+          /* Create the parallax scrolling effect*/
+          background-attachment: fixed;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        
+        .filebrowse{
+          width: 50%;
+          height:50%;
+          background-color:black;
+          opacity:0.8997;
+          left:25%;
+          position:absolute;
+          top:34%;
+          display: inline-block;
+          border-radius: 15px;
+          color:white;
+        }
+        .searchtext{
+          color:white;
+          padding-top: 2%;
+          padding-left:2%;
+        
+        }
+		#content{
+			background-color:black;
+			color:white;
+			border-radius:25px;
+			padding:10px;
+			border:1.5px solid white;
+		}
+        .imagefile{
+          width:150px;
+          height:150px;
+        }
+        .container-fluid{
+          margin: 0px !important;
+          padding: 0px !important;
+            display:block;
+            position: relative;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-color: black;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        .text-block {
+          position: absolute;
+          
+          width:100%;
+          background-color: black;
+          color: white;
+          padding-left: 20px;
+          padding-right: 20px;
+          
+        }
+        .menu-button{
+         text-decoration: none;
+         color:black;
+         background-color:#e1e3e9; 
+         height:300px;
+          border-radius:20px
+        }
+        .menu-button a{
+          text-decoration: none;
+          color:black;
+          display:block;
+        }
+        .menu-button:hover{
+        border-color:#0066cc;
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(90, 16, 16, 0.6);
+          outline: 0 none;
+         height:300px;
+          border-radius:20px;
+          text-decoration: none;
+          color:black;
+        }
+        footer{
+            color:white;
+            background-color: black;
+            padding:20px;
+            /* position: absolute; */
+            bottom: 0;
+            width: 100%;
+        }
+        .footer-classic a, .footer-classic a:focus, .footer-classic a.active {
+            color: #ffffff;
+        }
+        footer a:hover
+        {
+            text-decoration: none;
+            color:white;
+            transition: 0.5s;
+        }
+        .social-container .col {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        textarea:focus,
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="datetime"]:focus,
+        input[type="datetime-local"]:focus,
+        input[type="date"]:focus,
+        input[type="month"]:focus,
+        input[type="time"]:focus,
+        input[type="week"]:focus,
+        input[type="number"]:focus,
+        input[type="email"]:focus,
+        input[type="url"]:focus,
+        input[type="search"]:focus,
+        input[type="tel"]:focus,
+        input[type="color"]:focus,
+        textarea[type="text"]:focus,
+        .uneditable-input:focus {   
+          border-color:#0066cc;
+          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(90, 16, 16, 0.6);
+          outline: 0 none;
+        }
+        </style>
+<body>
+<div class="background">
+    <div class="contentouter">
+    <header class="container-fluid" style="color:white; padding:10px;">
+        <h1 class="display-4" style="padding:10px;">FP Detector</h1>
+    </header>
+    
+    
+    <div class="container" style="margin-top:30px">
+        <div class="row" >
+            
+            <div class="col-sm-11" id="content"  >
+                        <h3>Result</h3>
+                            <br>
+                        <br>
+                        <div id="vulnname">
+
+                        </div>
+                        <br>
+                        <br>                                
+            </div>
+            <div class="col-sm-1" id="rsidebar">     
+
+            </div>
+        </div>
+    </div>
+    <!--<footer>
+        <div class="container">
+            <div class="row row-30">
+                <div class="col-md-4 col-xl-5">
+                    <div class="pr-xl-4">
+                        <p>FP Detector</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>-->
+    </div>
+</div>
+</body>
+
+  
+</html>
