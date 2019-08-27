@@ -23,8 +23,7 @@ def success():
         # URL for the web service
         scoring_uri = 'http://fd2feb61-69c2-4e00-bff2-b0db15b037cd.southeastasia.azurecontainer.io/score'
         # If the service is authenticated, set the key
-        key = 'ustfpismsdev8855765643'
-
+       
 
         #with open(f.read()) as image_stream:
             #data=image_stream.read()
