@@ -6,13 +6,7 @@ Created on Wed Aug 21 10:44:43 2019
 """
 import requests
 import json
-import os
-proxy = 'http://gateway.zscaler.net:9400'
 
-os.environ['http_proxy'] = proxy 
-os.environ['HTTP_PROXY'] = proxy
-os.environ['https_proxy'] = proxy
-os.environ['HTTPS_PROXY'] = proxy 
 from flask import *  
 app = Flask(__name__)  
  
